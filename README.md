@@ -149,6 +149,12 @@ That alone won't provide the KoGaMa API. It's just a local HTTP endpoint to work
 
 **Additional Information** : Modifying the hosts file inside the windows folder to include the local host IP is also do-able
 
+```txt
+# Local Game Environment Redirection
+127.0.0.1       api.kogama.com
+127.0.0.1       www.kogama.com
+```
+
 ### 3. Local maps
 
 Create:
