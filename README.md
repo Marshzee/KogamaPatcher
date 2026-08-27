@@ -31,24 +31,6 @@ If someone wants to take the code, figure out what I screwed up, improve it, or 
 
 ---
 
-## So what does it actually do?
-
-KoGaMa really doesn't like being offline.
-
-You can't just unplug the internet and expect the game to continue normally. A bunch of its systems expect servers to answer, network initialization to complete, regions to exist, maps to come from somewhere, etc.
-
-This project was my attempt to work around that.
-
-The basic idea was to intercept the things that normally talk to KoGaMa's backend, provide the game with the information it expects, redirect requests to a local environment, and manually push the client through initialization when it refuses to do it itself.
-
-Some parts worked.
-
-Some parts worked almost.
-
-Some parts never got finished.
-
----
-
 ## What's actually in here?
 
 ### `BypassMVGameControllerInit (Compressed)`
