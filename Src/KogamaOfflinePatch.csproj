@@ -1,0 +1,59 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <LangVersion>9.0</LangVersion>
+    <Nullable>disable</Nullable>
+    <RootNamespace>KogamaOfflinePatch</RootNamespace>
+    <AssemblyName>KogamaOfflinePatch</AssemblyName>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <NoWarn>$(NoWarn);MSB3277</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+
+    <Reference Include="MelonLoader">
+      <HintPath>..\libs\MelonLoader.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="0Harmony">
+      <HintPath>..\libs\0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\libs\UnityEngine.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+        <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>..\libs\UnityEngine.AnimationModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+        <Reference Include="Newtonsoft.Json">
+      <HintPath>..\libs\Newtonsoft.Json.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\libs\UnityEngine.CoreModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+  <HintPath>..\libs\\UnityEngine.InputLegacyModule.dll</HintPath>
+</Reference>
+<Reference Include="Il2CppInterop.Runtime">
+  <HintPath>..\libs\\Il2CppInterop.Runtime.dll</HintPath>
+</Reference>
+<Reference Include="Il2Cppmscorlib">
+  <HintPath>..\libs\\Il2Cppmscorlib.dll</HintPath>
+</Reference>
+
+  </ItemGroup>
+  <PropertyGroup>
+<KogamaModsDir>$(USERPROFILE)\AppData\Local\KogamaLauncher-WWW\KogamaLauncher-WWW\Launcher\Standalone\Mods</KogamaModsDir>
+  </PropertyGroup>
+
+  <Target Name="CopyToModsFolder" AfterTargets="Build">
+    <Copy SourceFiles="$(TargetPath)"
+          DestinationFolder="$(KogamaModsDir)"
+          SkipUnchangedFiles="false" />
+    <Message Importance="high" Text="Copied $(TargetFileName) → $(KogamaModsDir)" />
+  </Target>
+</Project>
